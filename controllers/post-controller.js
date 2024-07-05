@@ -93,18 +93,19 @@ exports.editPost = [
                 // req.body[key] != null ? refObj[key] = req.body[key] : null;
             // }
 
-            console.log(refObj);
+            // console.log(refObj);
 
 
             const refData = {
                 post_text: post_text,
+                media:media
             };
 
             console.log("refData", refData);
 
-            const updatePost = await POST.findByIdAndUpdate(postId, refData, { new: true });
+            const updatePost = await POST.findByIdAndUpdate(postId, {$set: refData}, { new: true });
             console.log("Post updated successfully");
-            return responses.successResponse(res, successMessage.POST_UPDATED_SUCCESSFULLY);
+            return responses.successResponseWithData(res, successMessage.POST_UPDATED_SUCCESSFULLY,updatePost);
 
         } catch (error) {
             console.log(error.message);

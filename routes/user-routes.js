@@ -8,7 +8,7 @@ const uploadMultiple = require("../utils/cloudinary");
 
 router.post("/checkUserName",userController.checkUserName);
 router.post("/createUser",userController.createUser);
-router.get("/getUser/:userId",userController.getUser);
+router.get("/getUserProfile",userAuthMiddleware,userController.getUserProfile);
 router.get("/getAllUser",userController.getAllUser);
 router.get("/verifyEmail",userController.verifyEmail);
 router.post("/loginUser",userController.loginUser);

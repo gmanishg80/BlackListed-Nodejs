@@ -125,7 +125,7 @@ exports.deletePost = [
             const user = await USER.findById(userId);
             if (!user) return responses.errorResponse(res, errorMessage.USER_NOT_EXIST);
 
-            const postId = req.params.postId;
+            const postId = req.query.postId;
             console.log("postId", postId);
 
             const findPost = await POST.findOne({ _id: postId });

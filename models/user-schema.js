@@ -61,7 +61,8 @@ const userSchema = new mongoose.Schema(
     email_otp:{
       type:Number
       
-    }
+    },
+    
   },
   {
     timestamps: true,

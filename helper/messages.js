@@ -36,12 +36,14 @@ exports.successMessage = {
     YOUR_EMAIL_HAS_BEEN_VERIFIED:'Your email has been verified.',
     TERMS_AND_CONDITIONS:"terms and conditions",
     USER_DETAILS_FOUND_SUCCESSFULLY:"User details found successfully",
+    CONNECTION_SENDED_SUCCESSFULLY:"Connection sended successfully"
     
 
 }
 
 
 exports.errorMessage = {
+    CONNECTION_NOT_FOUND:"CONNECTION NOT FOUND",
     INTERNAL_SERVER_ERROR:"Internal Server Error",
     INVALID_EMAIL_OR_PASSWORD:"invalid email or password",
     USER_ALREADY_EXIST:"user already exist",
@@ -59,6 +61,8 @@ exports.errorMessage = {
     THIS_FIELD_REQUIRED_IN_KEY_VALUE_PAIR:"This field is required i key value pair",
     OTP_DO_NOT_MATCHED : "otp do not matched",
     NO_FILES_FOUND_TO_UPLOAD:'No files found to upload',
-    YOUR_EMAIL_IS_NOT_VERIFIED:'Your email is not verified.'
+    YOUR_EMAIL_IS_NOT_VERIFIED:'Your email is not verified.',
+    CONNECTION_IS_NOT_ACCEPTED:'Connection is not accepted.',
+    CONNECTION_NOT_FOUND:"connection not found"
     
 }

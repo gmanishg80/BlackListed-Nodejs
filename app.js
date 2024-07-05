@@ -11,6 +11,7 @@ const morgan = require("morgan");
 const cors = require('cors')
 const userRouter = require("./routes/user-routes");
 const postRouter = require("./routes/post-routes");
+const connectionRouter = require("./routes/connection-routes");
 require("./connection/db");
 require('dotenv').config();
 app.use(cors())
@@ -21,9 +22,7 @@ app.use(cors())
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));   
 
-// app.get('/', (req, res) => {
-//   res.render('verificationPage');
-// });
+
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.json());
@@ -34,6 +33,7 @@ const PORT = process.env.PORT || 9000;
 
 app.use("/user", userRouter);
 app.use("/post", postRouter);
+app.use("/connection", connectionRouter);
 
 
 

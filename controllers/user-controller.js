@@ -98,10 +98,10 @@ exports.createUser = [
 ];
 
 
-exports.getUser = async (req, res) => {
+exports.getUserProfile = async (req, res) => {
     try {
 
-        const userId = req.params.userId;
+        const userId = req.query.userId;
 
         console.log(userId, "hhhhh");
         const user = await USER.findOne({ _id: userId });
@@ -149,14 +149,6 @@ exports.getAllUser = async (req, res) => {
 
 exports.verifyEmail = async (req, res) => {
 
-
-    // res.render('vericationPage', {
-    //     title: 'Verification Page'
-    // });
-
-
-
-
     try {
         const token = req.query.token;
         console.log("token", token);
@@ -176,8 +168,6 @@ exports.verifyEmail = async (req, res) => {
 
         if (updatedUser) {
             res.render('verificationPage');
-            // res.render('verificationPage', { title: 'Verification Page' });
-            // responses.successResponse(res, successMessage.YOUR_EMAIL_HAS_BEEN_VERIFIED);
         } else {
             responses.errorResponse(res, errorMessage.YOUR_EMAIL_IS_NOT_VERIFIED);
         }
